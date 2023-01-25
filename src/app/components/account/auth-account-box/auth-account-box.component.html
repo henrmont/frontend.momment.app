@@ -1,0 +1,20 @@
+<div class="main">
+  <div class="logo">
+    <span>m<mat-icon>schedule</mat-icon>mment</span>
+  </div>
+  <mat-form-field appearance="outline">
+    <mat-label>email</mat-label>
+    <input matInput [(ngModel)]="account.username" name="username" type="email">
+    <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+    <!-- <mat-hint>Hint</mat-hint> -->
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>password</mat-label>
+    <input matInput [(ngModel)]="account.password" name="password" type="password">
+    <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+    <!-- <mat-hint>Hint</mat-hint> -->
+  </mat-form-field>
+  <button mat-raised-button color="primary" [disabled]="!account.username || !account.password" (click)="onSubmit()">Sign In</button>
+  <!-- <button mat-raised-button color="accent" routerLink="/conta/criar">Criar conta</button> -->
+  <!-- <button mat-raised-button routerLink="/recuperar/senha">Esqueci a senha</button> -->
+</div>

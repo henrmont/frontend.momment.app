@@ -1,0 +1,7 @@
+<div class="box mat-elevation-z6">
+  <img [src]="'assets/img/'+banner">
+  <div class="account">
+    <span>m<mat-icon>schedule</mat-icon>mment</span>
+    <router-outlet (activate)="changeBanner($event.banner)"></router-outlet>
+  </div>
+</div>

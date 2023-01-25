@@ -1,0 +1,62 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+}
+
+.content {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidenav {
+  padding: 20px;
+  background-color: rgb(230,230,230);
+}
+
+.sidediv {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.list-item {
+  width: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.list-item h4 {
+  margin: auto auto auto 30px;
+  vertical-align: middle;
+  justify-self: center;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+}
+
+.menu button {
+  align-items: left;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+}
+
+.logo span {
+  text-align: center;
+  font-size: 48px;
+  margin-bottom: 60px;
+  font-family: 'Poiret One', cursive;
+}
+
+.logo mat-icon {
+  font-size: 26px;
+}

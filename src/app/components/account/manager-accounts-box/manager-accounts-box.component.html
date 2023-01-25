@@ -1,0 +1,22 @@
+<div class="main">
+  <div class="title">
+    <mat-icon>manage_accounts</mat-icon>
+    <span>Manager Accounts</span>
+  </div>
+  <mat-divider></mat-divider>
+  <mat-nav-list>
+    <mat-list-item *ngFor="let item of actvAcc" (click)="changeAccount(item[3],item[4])">
+      <div class="actvacc">
+        <img src="assets/img/profile.png">
+        <div>
+          <span style="font-size: 16px; font-weight: 500;">{{item[0]}}</span>
+          <span style="font-size: 14px; font-style: italic;">{{item[1]}}</span>
+        </div>
+        <mat-icon *ngIf="username == item[0]">check</mat-icon>
+      </div>
+    </mat-list-item>
+  </mat-nav-list>
+  <button mat-raised-button color="primary" (click)="authAccount()">LOG IN WITH EXISTING ACCOUNT</button>
+  <button mat-raised-button color="warn" (click)="commonService.logoutAll()">LOGOUT ALL ACCOUNTS</button>
+</div>
+

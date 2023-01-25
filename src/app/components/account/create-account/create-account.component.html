@@ -1,0 +1,27 @@
+<mat-form-field appearance="outline">
+  <mat-label>username</mat-label>
+  <input matInput [(ngModel)]="account.username" name="username" type="text">
+  <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+  <!-- <mat-hint>Hint</mat-hint> -->
+</mat-form-field>
+<mat-form-field appearance="outline">
+  <mat-label>email</mat-label>
+  <input matInput [(ngModel)]="account.email" name="email" type="email">
+  <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+  <!-- <mat-hint>Hint</mat-hint> -->
+</mat-form-field>
+<mat-form-field appearance="outline">
+  <mat-label>password</mat-label>
+  <input matInput [(ngModel)]="account.password" name="password" type="password">
+  <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+  <!-- <mat-hint>Hint</mat-hint> -->
+</mat-form-field>
+<mat-form-field appearance="outline">
+  <mat-label>confirm password</mat-label>
+  <input matInput [(ngModel)]="cpassword" name="password" type="password">
+  <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+  <!-- <mat-hint>Hint</mat-hint> -->
+</mat-form-field>
+<button mat-raised-button color="primary" [disabled]="!account.username || !account.email || !account.password" (click)="onSubmit()">Create Account</button>
+<!-- <button mat-raised-button color="accent" routerLink="/conta/criar">Criar conta</button> -->
+<!-- <button mat-raised-button routerLink="/recuperar/senha">Esqueci a senha</button> -->

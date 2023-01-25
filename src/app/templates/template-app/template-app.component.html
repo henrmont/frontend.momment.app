@@ -1,0 +1,98 @@
+
+<mat-drawer-container class="container" autosize>
+  <mat-drawer #drawer class="sidenav mat-elevation-z4" mode="side" opened="true">
+
+    <div class="sidediv">
+      <div>
+        <div *ngIf="showFiller" class="logo">
+          <span>m<mat-icon>schedule</mat-icon>mment</span>
+        </div>
+        <div *ngIf="!showFiller" class="logo">
+          <span><mat-icon>schedule</mat-icon></span>
+        </div>
+      </div>
+
+      <mat-nav-list>
+        <mat-list-item>
+          <div class="list-item">
+            <mat-icon mat-list-icon>person</mat-icon>
+            <h4 mat-line *ngIf="showFiller">Management A</h4>
+          </div>
+        </mat-list-item>
+        <mat-list-item>
+          <div class="list-item">
+            <mat-icon mat-list-icon>assignment</mat-icon>
+            <h4 mat-line *ngIf="showFiller">Management B</h4>
+          </div>
+        </mat-list-item>
+        <mat-list-item>
+          <div class="list-item">
+            <mat-icon mat-list-icon>domain</mat-icon>
+            <h4 mat-line *ngIf="showFiller">Management C</h4>
+          </div>
+        </mat-list-item>
+        <mat-list-item>
+          <div class="list-item">
+            <mat-icon mat-list-icon>folder_shared</mat-icon>
+            <h4 mat-line *ngIf="showFiller">Management X</h4>
+          </div>
+        </mat-list-item>
+        <mat-list-item>
+          <div class="list-item">
+            <mat-icon mat-list-icon>folder_shared</mat-icon>
+            <h4 mat-line *ngIf="showFiller">Management X</h4>
+          </div>
+        </mat-list-item>
+      </mat-nav-list>
+
+      <div class="list-item" style="height: 50px;">
+        <button mat-mini-fab *ngIf="!showFiller" color="primary" style="margin: 10px;">
+          <mat-icon aria-label="Menu">add</mat-icon>
+          <h4 mat-line *ngIf="showFiller">Create</h4>
+        </button>
+        <button mat-raised-button *ngIf="showFiller" color="primary" style="margin: 10px; width: 100%; border-radius: 30px; display: flex; justify-content: flex-start;">
+          <mat-icon aria-label="Menu">add</mat-icon>
+          <h4 mat-line *ngIf="showFiller">Create</h4>
+        </button>
+      </div>
+
+      <mat-nav-list>
+        <mat-list-item [matMenuTriggerFor]="menu">
+          <div class="list-item">
+            <mat-icon mat-list-icon>more_vert</mat-icon>
+            <h4 mat-line *ngIf="showFiller">More</h4>
+          </div>
+        </mat-list-item>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item *ngIf="!showFiller" (click)="showFiller = !showFiller">
+            <mat-icon>chevron_right</mat-icon>
+            <span>Expand menu</span>
+          </button>
+          <button mat-menu-item *ngIf="showFiller" (click)="showFiller = !showFiller">
+            <mat-icon>chevron_left</mat-icon>
+            <span>Compress menu</span>
+          </button>
+          <button mat-menu-item (click)="managerAccounts()">
+            <mat-icon>manage_accounts</mat-icon>
+            <span>Accounts</span>
+          </button>
+          <button mat-menu-item (click)="commonService.logout()">
+            <mat-icon>logout</mat-icon>
+            <span>Logout</span>
+          </button>
+        </mat-menu>
+      </mat-nav-list>
+
+    </div>
+
+
+  </mat-drawer>
+
+  <div class="content">
+    <!-- <button type="button" mat-button (click)="drawer.toggle()">
+      Toggle sidenav
+    </button> -->
+    <router-outlet></router-outlet>
+  </div>
+
+</mat-drawer-container>
